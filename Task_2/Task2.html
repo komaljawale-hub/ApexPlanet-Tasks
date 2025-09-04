@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractive Beginner Website</title>
+  <link rel="stylesheet" href="Task2.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <h1 class="logo">✨ My Website</h1>
+    <ul class="nav-links">
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#todo">To-Do</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="card">
+    <h2>📩 Contact Form</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <span class="error" id="nameError"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+      <span class="error" id="emailError"></span>
+
+      <label for="message">Message:</label>
+      <textarea id="message" placeholder="Write your message"></textarea>
+      <span class="error" id="messageError"></span>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- To-Do List Section -->
+  <section id="todo" class="card">
+    <h2>📝 To-Do List</h2>
+    <p>👉 You can add multiple tasks at once (separate with commas).</p>
+    <input type="text" id="taskInput" placeholder="Enter task(s)">
+    <button onclick="addTask()">Add Task(s)</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="Task2.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 15px 25px;
+}
+nav .logo {
+  color: white;
+  font-size: 1.4em;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+/* Section Cards */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 25px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+form label {
+  margin-top: 12px;
+  font-weight: bold;
+}
+form input, form textarea {
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  margin-top: 20px;
+  padding: 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #ff9800;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* To-Do List */
+#todo input {
+  padding: 10px;
+  width: 70%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+#todo button {
+  padding: 10px 14px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+#todo button:hover {
+  background: #ff9800;
+}
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1f1;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+#taskList li:hover {
+  background: #e0e0e0;
+}
+#taskList li button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+#taskList li button:first-child {
+  background: green;
+}
