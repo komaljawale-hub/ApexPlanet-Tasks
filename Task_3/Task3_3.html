@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather API Example</title>
+</head>
+<body style="font-family: Arial; text-align: center; padding: 20px;">
+  <h2>🌦 Weather API Example</h2>
+  <button onclick="getWeather()">Get Pune Weather</button>
+  <p id="weather"></p>
+
+  <script>
+    async function getWeather() {
+      const url = "https://api.open-meteo.com/v1/forecast?latitude=18.5204&longitude=73.8567&current_weather=true";
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        document.getElementById("weather").innerText =
+          `🌡 Temp: ${data.current_weather.temperature}°C
+           💨 Wind: ${data.current_weather.windspeed} km/h`;
+      } catch (error) {
+        document.getElementById("weather").innerText = "Error fetching data!";
+      }
+    }
+  </script>
+</body>
+</html>

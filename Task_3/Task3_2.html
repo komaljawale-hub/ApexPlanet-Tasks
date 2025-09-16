@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+</head>
+<body style="font-family: Arial; text-align: center; padding: 20px;">
+  <h2>Quiz App</h2>
+  <div id="quiz">
+    <p id="question"></p>
+    <div id="options"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      { question: "What is 2+2?", options: ["3", "4", "5"], answer: "4" },
+      { question: "Capital of France?", options: ["London", "Paris", "Rome"], answer: "Paris" }
+    ];
+
+    let index = 0, score = 0;
+
+    function loadQuestion() {
+      document.getElementById("question").innerText = quizData[index].question;
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+      quizData[index].options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.style.margin = "5px";
+        btn.onclick = () => checkAnswer(opt);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      if (selected === quizData[index].answer) score++;
+      index++;
+      if (index < quizData.length) loadQuestion();
+      else document.getElementById("quiz").innerText = `Your Score: ${score}`;
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
