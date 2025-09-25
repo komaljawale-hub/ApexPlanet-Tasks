@@ -1,0 +1,61 @@
+/* General */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #3b82f6;
+  --muted: #9ca3af;
+  --maxw: 1000px;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #071029; color: #e6eef8;
+}
+
+/* Layout */
+.container { max-width: var(--maxw); margin: 0 auto; padding: 20px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+.nav { display: flex; gap: 20px; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a.active, .nav a:hover { color: var(--accent); }
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { opacity: 0.9; }
+
+footer { text-align: center; padding: 15px; color: var(--muted); }
+
+/* To-Do App */
+#taskList { list-style: none; padding: 0; }
+#taskList li {
+  display: flex; justify-content: space-between;
+  padding: 6px; border-bottom: 1px solid #444;
+}
+
+/* Product Grid */
+.controls { display: flex; gap: 10px; margin-bottom: 15px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 15px;
+}
+.grid .card {
+  background: #1a2235;
+  border: 1px solid #2c3e50;
+}
+.price { font-weight: bold; color: var(--accent); }
