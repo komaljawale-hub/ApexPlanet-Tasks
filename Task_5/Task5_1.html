@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Hub</title>
+  <link rel="stylesheet" href="Task5_2.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🍕 Pizza Hub</h1>
+    <nav>
+      <button onclick="showTab('menu')">Menu</button>
+      <button onclick="showTab('cart')">Cart (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <!-- Pizza Menu -->
+  <section id="menu" class="tab-content active">
+    <h2>Our Pizzas</h2>
+    <div class="controls">
+      <select id="sortOption" onchange="sortProducts()">
+        <option value="default">Sort By</option>
+        <option value="priceLowHigh">Price: Low → High</option>
+        <option value="priceHighLow">Price: High → Low</option>
+        <option value="ratingHighLow">Rating: High → Low</option>
+      </select>
+    </div>
+    <div id="productsGrid" class="grid"></div>
+  </section>
+
+  <!-- Cart -->
+  <section id="cart" class="tab-content">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+    <button onclick="checkout()">Proceed to Checkout</button>
+
+    <!-- Checkout Form -->
+    <form id="checkoutForm" onsubmit="submitOrder(event)">
+      <h3>Checkout</h3>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="address" placeholder="Your Address" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <button type="submit">Place Order</button>
+    </form>
+    <p id="orderMessage"></p>
+  </section>
+
+  <script src="Task5_3.js"></script>
+</body>
+</html>
